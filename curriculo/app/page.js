@@ -4,13 +4,38 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen p-6 bg-gray-200">
-      <h1 className="text-4xl font-bold mb-4">Bem-vindo ao meu Portfólio</h1>
-      <nav className="space-y-2">
-        <Link href="/sobre" className="block text-xl underline">Sobre</Link>
-        <Link href="/exp-academica" className="block text-xl underline">Experiência Acadêmica</Link>
-        <Link href="/exp-profissional" className="block text-xl underline">Experiência Profissional</Link>
-        <Link href="/projetos" className="block text-xl underline">Projetos Desenvolvidos</Link>
-        <Link href="/jogo" className="block text-xl underline">Jogo da Senha</Link>
+      <h1 className="text-4xl font-bold mb-8 text-center">Meu Portfólio</h1>
+      <nav className="flex flex-col items-center space-y-4">
+        <Link
+          href="/sobre"
+          className="bg-blue-500 text-white px-6 py-2 rounded-full text-lg hover:bg-blue-600 transition-colors"
+        >
+          Sobre
+        </Link>
+        <Link
+          href="/exp-academica"
+          className="bg-blue-500 text-white px-6 py-2 rounded-full text-lg hover:bg-blue-600 transition-colors"
+        >
+          Experiência Acadêmica
+        </Link>
+        <Link
+          href="/exp-profissional"
+          className="bg-blue-500 text-white px-6 py-2 rounded-full text-lg hover:bg-blue-600 transition-colors"
+        >
+          Experiência Profissional
+        </Link>
+        <Link
+          href="/projetos"
+          className="bg-blue-500 text-white px-6 py-2 rounded-full text-lg hover:bg-blue-600 transition-colors"
+        >
+          Projetos Desenvolvidos
+        </Link>
+        <Link
+          href="/jogo"
+          className="bg-blue-500 text-white px-6 py-2 rounded-full text-lg hover:bg-blue-600 transition-colors"
+        >
+          Jogo da Senha
+        </Link>
       </nav>
     </main>
   );

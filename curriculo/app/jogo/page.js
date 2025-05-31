@@ -48,41 +48,50 @@ export default function Jogo() {
   };
 
   return (
-    <main className="min-h-screen p-8 bg-gray-50 text-gray-900">
-      <h1 className="text-3xl font-bold mb-4">Jogo da Senha</h1>
-      <div className="mb-4">
-        <input
-          value={guess}
-          onChange={(e) => setGuess(e.target.value)}
-          className="border p-2 rounded mr-2"
-          placeholder="Digite 4 números únicos"
-          disabled={gameOver}
-        />
-        <button onClick={handleGuess} disabled={gameOver} className="px-4 py-2 bg-blue-600 text-white rounded">
-          Tentar
-        </button>
-        <button onClick={() => alert(`Senha: ${secret}`)} className="ml-2 px-4 py-2 bg-yellow-400 text-black rounded">
-          Mostrar Senha
-        </button>
-      </div>
-      <div className="space-y-2">
-        {guesses.map((g, i) => (
-          <div key={i} className="bg-white p-2 rounded shadow">
-            <span className="font-mono">{g.guess}</span>: {g.bulls} bulls, {g.cows} cows
-          </div>
-        ))}
-      </div>
-      {gameOver && (
-        <div className="mt-6">
-          <p className="text-lg font-semibold">
-            {guesses[0].bulls === 4 ? "Parabéns! Você acertou a senha." : "Fim de jogo. Número máximo de tentativas alcançado."}
-          </p>
-          <button onClick={handleRestart} className="mt-2 px-4 py-2 bg-green-600 text-white rounded">
-            Novo Jogo
+    <main className="min-h-screen flex items-center justify-center bg-gray-200">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md text-gray-900">
+        <h1 className="text-3xl font-bold mb-4 text-center">Jogo da Senha</h1>
+        <div className="mb-4 flex flex-col sm:flex-row gap-2 sm:items-center">
+          <input
+            value={guess}
+            onChange={(e) => setGuess(e.target.value)}
+            className="border p-2 rounded flex-1"
+            placeholder="Digite 4 números únicos"
+            disabled={gameOver}
+          />
+          <button onClick={handleGuess} disabled={gameOver} className="px-4 py-2 bg-blue-600 text-white rounded">
+            Tentar
           </button>
         </div>
-      )}
-      <Link href="/" className="block mt-8 text-blue-600 underline">Voltar para Home</Link>
+        <button
+          onClick={() => alert(`Senha: ${secret}`)}
+          className="mb-4 w-full px-4 py-2 bg-yellow-400 text-black rounded"
+        >
+          Mostrar Senha
+        </button>
+        <div className="space-y-2 mb-4 max-h-64 overflow-y-auto">
+          {guesses.map((g, i) => (
+            <div key={i} className="bg-gray-100 p-2 rounded shadow text-sm">
+              <span className="font-mono">{g.guess}</span>: {g.bulls} bulls, {g.cows} cows
+            </div>
+          ))}
+        </div>
+        {gameOver && (
+          <div className="mt-4 text-center">
+            <p className="text-lg font-semibold mb-2">
+              {guesses[0].bulls === 4
+                ? "🎉 Parabéns! Você acertou a senha."
+                : "❌ Fim de jogo. Número máximo de tentativas alcançado."}
+            </p>
+            <button onClick={handleRestart} className="px-4 py-2 bg-green-600 text-white rounded">
+              Novo Jogo
+            </button>
+          </div>
+        )}
+        <Link href="/" className="block mt-6 text-center text-blue-600 underline">
+          Voltar para Home
+        </Link>
+      </div>
     </main>
   );
 }
