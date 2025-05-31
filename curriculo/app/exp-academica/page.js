@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Academico() {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-blue-200 text-neutral-900 px-6 py-12 font-sans">
+    <main className="min-h-screen flex items-center justify-center bg-gray-200 text-neutral-900 px-6 py-12 font-sans">
       <div className="w-full max-w-3xl bg-white p-10 rounded-xl shadow-xl text-center">
         <h1 className="text-4xl font-bold mb-12">Formação Acadêmica</h1>
 
