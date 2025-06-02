@@ -65,7 +65,7 @@ export default function Jogo() {
         </div>
         <button
           onClick={() => alert(`Senha: ${secret}`)}
-          className="mb-4 w-full px-4 py-2 bg-yellow-400 text-black rounded"
+          className="mb-4 w-full px-4 py-2 bg-blue-600 text-black rounded"
         >
           Mostrar Senha
         </button>
